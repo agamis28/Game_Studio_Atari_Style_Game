@@ -647,6 +647,7 @@ GameObject:
   - component: {fileID: 2066615682}
   - component: {fileID: 2066615684}
   - component: {fileID: 2066615685}
+  - component: {fileID: 2066615686}
   m_Layer: 0
   m_Name: Player (Goose)
   m_TagString: Untagged
@@ -728,7 +729,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066615678}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 074259d3b05621b41986a874aac15d37, type: 3}
   m_Name: 
@@ -813,6 +814,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &2066615686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066615678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c8dd45e8592ef4a82316e86dd55e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
+  inputs: {x: 0, y: 0}
+  moveForce: 100
+  moveTorque: 2
 --- !u!1 &2121888294
 GameObject:
   m_ObjectHideFlags: 0

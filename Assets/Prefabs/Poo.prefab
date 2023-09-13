@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9120149845783973634}
   - component: {fileID: 436636359423653033}
   - component: {fileID: 4283776069123469015}
+  - component: {fileID: 2827150350088564953}
   m_Layer: 0
   m_Name: Poo
   m_TagString: Untagged
@@ -129,3 +130,38 @@ MonoBehaviour:
   initialImpulseForce: {x: 0, y: 5}
   addForceOverTime: 1
   overTimeForce: {x: 0, y: 0}
+--- !u!58 &2827150350088564953
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846785326346275223}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.099999994

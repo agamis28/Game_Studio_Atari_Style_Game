@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovementPhysics : MonoBehaviour
+{
+	[Header("** References **")]
+	public Rigidbody2D rigid;
+
+	[Header("** Inputs **")]
+	public Vector2 inputs;
+
+	[Header("** Stats **")]
+	public float moveForce = 5f;
+	public float moveTorque = 2f;
+
+	// Start is called before the first frame update
+	void Start()
+	{
+		// Get this players rigidbody
+		rigid = GetComponent<Rigidbody2D>();
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+		// Grab keyboard inputs and store them in Vector 2 inputs
+		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+	}
+
+    private void FixedUpdate()
+    {
+		// Add a force to player
+        rigid.AddForce(inputs * moveForce);
+    }
+}
