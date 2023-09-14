@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7061899336658638254}
   - component: {fileID: 1272869908413152003}
   - component: {fileID: 8438173208309560699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Duck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
