@@ -19,6 +19,7 @@ public class PlayerMovementPhysics : MonoBehaviour
 	{
 		// Get this players rigidbody
 		rigid = GetComponent<Rigidbody2D>();
+
 	}
 
 	// Update is called once per frame
@@ -26,6 +27,7 @@ public class PlayerMovementPhysics : MonoBehaviour
 	{
 		// Grab keyboard inputs and store them in Vector 2 inputs
 		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
 	}
 
     private void FixedUpdate()
