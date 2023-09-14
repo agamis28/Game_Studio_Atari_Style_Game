@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovementPhysics : MonoBehaviour
 {
 	[Header("** References **")]
-	public Rigidbody2D rigid;
+	private Rigidbody2D rigid;
 
 	[Header("** Inputs **")]
 	public Vector2 inputs;
