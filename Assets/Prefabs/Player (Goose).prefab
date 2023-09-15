@@ -154,8 +154,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4206935066196766316}
   - component: {fileID: 2600073807411219069}
-  - component: {fileID: 6216023322901411330}
   - component: {fileID: 6133809656636359761}
+  - component: {fileID: 6216023322901411330}
   m_Layer: 3
   m_Name: Player Art
   m_TagString: Untagged
@@ -230,6 +230,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6133809656636359761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8139143629364640343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8501b15822e3044b95b1e52e58ba875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 0}
+  inputs: {x: 0, y: 0}
+  up: {fileID: 226352276, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
+  upDiagonal: {fileID: 2101454872, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
+  horizontal: {fileID: -774749278, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
+  left: {fileID: -774749278, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
+  down: {fileID: -1014301088, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
+  downDiagonal: {fileID: -1941786220, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
 --- !u!114 &6216023322901411330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,15 +273,3 @@ MonoBehaviour:
   turnRight: {fileID: 0}
   turnThreshold: 0.7
   tiltThreshold: 0.2
---- !u!114 &6133809656636359761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139143629364640343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8501b15822e3044b95b1e52e58ba875, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

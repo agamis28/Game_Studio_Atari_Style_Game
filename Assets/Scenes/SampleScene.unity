@@ -769,6 +769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (Goose)
       objectReference: {fileID: 0}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: right
+      value: 
+      objectReference: {fileID: -774749278, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
     - target: {fileID: 6504637615311623048, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
