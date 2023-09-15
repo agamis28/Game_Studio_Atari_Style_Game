@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5080476568712652834}
   - component: {fileID: 795778457976618925}
+  - component: {fileID: 4247888087169902712}
   m_Layer: 3
   m_Name: Player Shooter
   m_TagString: Untagged
@@ -39,13 +40,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5190832706167075613}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: def91169ee8c7be4b82edf45147f28e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 6846785326346275223, guid: c42f9474bc4ae7149bad3f9877329202, type: 3}
   fireRate: 0.3
+--- !u!114 &4247888087169902712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190832706167075613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2699ca4a8f54704d9bb7a77ae5a5c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  timeBetweenShots: 0.4
 --- !u!1 &6030865104647577980
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +70,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6504637615311623048}
-  - component: {fileID: 779034608845273691}
   - component: {fileID: 6594949592916965759}
   - component: {fileID: 3837527391070287704}
   - component: {fileID: 8421477019653267614}
@@ -83,22 +97,6 @@ Transform:
   - {fileID: 5080476568712652834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &779034608845273691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6030865104647577980}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074259d3b05621b41986a874aac15d37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputx: 0
-  inputy: 0
-  inputs: {x: 0, y: 0}
-  speed: 2.5
 --- !u!70 &6594949592916965759
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

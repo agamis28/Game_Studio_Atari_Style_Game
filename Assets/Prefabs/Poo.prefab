@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4283776069123469015}
   - component: {fileID: 2827150350088564953}
   - component: {fileID: 6991448346935385431}
+  - component: {fileID: 5517981584048980511}
   m_Layer: 0
   m_Name: Poo
   m_TagString: Untagged
@@ -122,15 +123,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6846785326346275223}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91daff258f0e6f54babca190394335b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applyInitialImpulse: 1
+  applyInitialImpulse: 0
   initialImpulseForce: {x: 0, y: 5}
   addForceOverTime: 1
-  overTimeForce: {x: 0, y: 0}
+  overTimeForce: {x: 0, y: 1}
 --- !u!58 &2827150350088564953
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -178,3 +179,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02407c65d99cd3344aefce7cec63dc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5517981584048980511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846785326346275223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866d01a9dcab7eb48b60a822a655d026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
+  inputs: {x: 0, y: 0}
+  impulseForce: 1

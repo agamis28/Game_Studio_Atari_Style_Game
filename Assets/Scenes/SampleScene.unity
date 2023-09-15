@@ -608,6 +608,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4247888087169902712, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6846785326346275223, guid: c42f9474bc4ae7149bad3f9877329202, type: 3}
     - target: {fileID: 6030865104647577980, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: m_Name
       value: Player (Goose)
