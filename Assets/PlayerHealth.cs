@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
 	[Header ("** References **")]
 	public GameObject extraLifePrefab;
 	private PlayerMovementPhysics playerMovement;
+	private CapsuleCollider2D playerCollider;
 
 	[Header ("** Stats **")]
 	public int livesCount = 3;
@@ -26,12 +27,14 @@ public class PlayerHealth : MonoBehaviour
 	public GameObject playerLife1;
     public GameObject playerLife2;
     public GameObject playerLife3;
+	public GameObject deathScreen;
 
     // Start is called before the first frame update
     void Start()
 	{
 		playerTransform = transform;
 		playerMovement = GetComponent<PlayerMovementPhysics>();
+		playerCollider = GetComponent<CapsuleCollider2D>();
 	}
 
 	// Update is called once per frame
@@ -52,21 +55,26 @@ public class PlayerHealth : MonoBehaviour
 			case 1:
 				playerLife3.SetActive (false);
                 playerLife2.SetActive(false);
-                playerLife1.SetActive(false);
+                playerLife1.SetActive(true);
                 break;
+			case 0:
+                playerLife3.SetActive(false);
+                playerLife2.SetActive(false);
+                playerLife1.SetActive(false);
+                deathScreen.SetActive(true);
+				playerMovement.enabled = false;
+				break;
 		}
 
 	}
 
 	void PlayerDied()
 	{
-		// Lower Lives
-		livesCount -= 1;
-
 		// Respawn in respawn position, if player still has lives
 		if (livesCount > 0)
 		{
 			playerTransform.position = respawnPoint;
+			playerCollider.enabled = true;
 		}
 	}
 
@@ -79,8 +87,14 @@ public class PlayerHealth : MonoBehaviour
 			playerTransform.position = deathPoint;
 			Debug.Log("Hit a duck");
 
-			// Delay respawn
-			Invoke("PlayerDied", respawnDelay);
+            // Lower Lives
+            livesCount -= 1;
+
+            // Disable collider to not collide again
+            playerCollider.enabled = false;
+
+            // Delay respawn
+            Invoke("PlayerDied", respawnDelay);
 		}
 
 	}
