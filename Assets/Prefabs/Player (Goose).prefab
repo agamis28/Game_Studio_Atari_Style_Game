@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2699ca4a8f54704d9bb7a77ae5a5c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6846785326346275223, guid: c42f9474bc4ae7149bad3f9877329202, type: 3}
   timeBetweenShots: 0.4
 --- !u!1 &6030865104647577980
 GameObject:
@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 6594949592916965759}
   - component: {fileID: 3837527391070287704}
   - component: {fileID: 8421477019653267614}
+  - component: {fileID: 7056855026475714966}
   m_Layer: 3
   m_Name: Player (Goose)
   m_TagString: Player
@@ -129,8 +130,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.055904202, y: -0.012504553}
-  m_Size: {x: 0.4794342, y: 0.30089772}
+  m_Offset: {x: -0.013013322, y: -0.020073693}
+  m_Size: {x: 0.3532852, y: 0.21511742}
   m_Direction: 1
 --- !u!50 &3837527391070287704
 Rigidbody2D:
@@ -174,6 +175,25 @@ MonoBehaviour:
   inputs: {x: 0, y: 0}
   moveForce: 5
   moveTorque: 2
+--- !u!114 &7056855026475714966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030865104647577980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b951e754c468bdf43b07d89c3f9ea601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {x: 0, y: 0}
+  deathPoint: {x: 0, y: 0}
+  extraLifePrefab: {fileID: 0}
+  livesCount: 3
+  respawnTimer: 0
+  respawnDelay: 2
+  extraLives: 0
 --- !u!1 &8139143629364640343
 GameObject:
   m_ObjectHideFlags: 0
