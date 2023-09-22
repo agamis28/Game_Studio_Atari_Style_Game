@@ -4,6 +4,7 @@ public class PlayerShooting : MonoBehaviour
 {
 	[Header("** References **")]
 	public GameObject bulletPrefab;
+	public GameObject player;
 
 	[Header("** Stats **")]
 	public float timeBetweenShots = 0.4f;
@@ -14,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	// Update is called once per frame
@@ -33,7 +34,9 @@ public class PlayerShooting : MonoBehaviour
             if (currentShotsTimer >= timeBetweenShots)
             {
 				// Spawn new bullet
-				Instantiate(bulletPrefab, transform.position, Quaternion.identity); 
+				GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation); 
+				// Set rotation of the bullet to the players rotation at moment of shot
+				bullet.transform.rotation = player.transform.rotation;
 				// Reset Timer
 				currentShotsTimer = 0;
             }
