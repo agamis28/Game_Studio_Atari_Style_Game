@@ -9,6 +9,7 @@ public class PlayerMovementPhysics : MonoBehaviour
 
 	[Header("** Inputs **")]
 	public Vector2 inputs;
+	public Vector2 lastDirection;
 
 	[Header("** Stats **")]
 	public float moveForce = 5f;
@@ -19,7 +20,6 @@ public class PlayerMovementPhysics : MonoBehaviour
 	{
 		// Get this players rigidbody
 		rigid = GetComponent<Rigidbody2D>();
-
 	}
 
 	// Update is called once per frame
@@ -28,11 +28,30 @@ public class PlayerMovementPhysics : MonoBehaviour
 		// Grab keyboard inputs and store them in Vector 2 inputs
 		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-	}
+        if (inputs.x == 0 && inputs.y == 0)
+		{
+			lastDirection = inputs;
+		}
+
+        Debug.Log(lastDirection);
+    }
 
     private void FixedUpdate()
     {
 		// Add a force to player
-        rigid.AddForce(inputs * moveForce);
+		rigid.velocity = inputs * moveForce;
+
+		RotateInDirection();
     }
+
+	private void RotateInDirection()
+	{
+		if(inputs != Vector2.zero)
+		{
+            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, inputs);
+            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveTorque * Time.deltaTime);
+
+            rigid.MoveRotation(rotation);
+        }
+	}
 }

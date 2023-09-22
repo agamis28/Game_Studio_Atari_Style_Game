@@ -7,27 +7,31 @@ public class PooBullet : MonoBehaviour
 {
 	[Header("** References **")]
 	public Rigidbody2D rigid;
+	public PlayerMovementPhysics playerMovement;
 
 	[Header("** Stats **")]
-	public Vector2 inputs;
+	public Vector2 playerDirection;
 	public float impulseForce = 5f;
 
 	// Start is called before the first frame update
 	void Start()
 	{
         rigid = GetComponent<Rigidbody2D>();
-
+		playerMovement = GameObject.FindFirstObjectByType<PlayerMovementPhysics>();
+		// Grab player direction
+		playerDirection = playerMovement.lastDirection;
     }
 
     // Update is called once per frame
     void Update()
 	{
-		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-	}
 
-	// Update is called once per frame
-	void FixedUpdate()
+
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
 	{
-		rigid.AddRelativeForce(inputs * impulseForce, ForceMode2D.Impulse);
+		rigid.AddRelativeForce(playerDirection * impulseForce, ForceMode2D.Impulse);
 	}
 }
