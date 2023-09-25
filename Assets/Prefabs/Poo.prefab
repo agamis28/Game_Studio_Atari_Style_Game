@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1775729734411906785}
   - component: {fileID: 9120149845783973634}
   - component: {fileID: 436636359423653033}
-  - component: {fileID: 4283776069123469015}
   - component: {fileID: 2827150350088564953}
   - component: {fileID: 6991448346935385431}
   - component: {fileID: 5517981584048980511}
@@ -116,22 +115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4283776069123469015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6846785326346275223}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91daff258f0e6f54babca190394335b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  applyInitialImpulse: 0
-  initialImpulseForce: {x: 0, y: 5}
-  addForceOverTime: 1
-  overTimeForce: {x: 0, y: 1}
 --- !u!58 &2827150350088564953
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -192,5 +175,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigid: {fileID: 0}
-  inputs: {x: 0, y: 0}
+  playerDirection: {x: 0, y: 0}
   impulseForce: 1

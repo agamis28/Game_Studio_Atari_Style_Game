@@ -19,12 +19,6 @@ public class PooBullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-	{
-
-    }
-
-    // Update is called once per frame
     void FixedUpdate()
 	{
 		rigid.AddForce(transform.up * impulseForce, ForceMode2D.Impulse);
