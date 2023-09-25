@@ -375,7 +375,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shoot all yellow ducks
+  m_Text: Shoot all yellow ducks using [ Space Bar ]
 --- !u!222 &231713041
 CanvasRenderer:
   m_ObjectHideFlags: 0
