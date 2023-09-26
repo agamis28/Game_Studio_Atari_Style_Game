@@ -27,21 +27,16 @@ public class PlayerMovementPhysics : MonoBehaviour
 	{
 		// Grab keyboard inputs and store them in Vector 2 inputs
 		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        if (inputs.x == 0 && inputs.y == 0)
-		{
-			lastDirection = inputs;
-		}
-
-        Debug.Log(lastDirection);
     }
 
     private void FixedUpdate()
     {
-		// Add a force to player
-		rigid.velocity = inputs * moveForce;
+        rigid.AddRelativeForce(new Vector2(0, inputs.y) * moveForce);
+        rigid.AddTorque(-inputs.x * moveTorque);
+        // Add a force to player
+        //rigid.velocity = inputs * moveForce;
 
-		RotateInDirection();
+        //RotateInDirection();
     }
 
 	private void RotateInDirection()
