@@ -2038,30 +2038,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3837527391070287704, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: m_Mass
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3837527391070287704, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: m_LinearDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3837527391070287704, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: m_AngularDrag
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 4247888087169902712, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: displayedPointCount
       value: 
       objectReference: {fileID: 1314484566}
-    - target: {fileID: 5080476568712652834, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.024
-      objectReference: {fileID: 0}
-    - target: {fileID: 5080476568712652834, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.164
-      objectReference: {fileID: 0}
     - target: {fileID: 6030865104647577980, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: m_Name
       value: Player (Goose)
@@ -2106,10 +2086,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6594949592916965759, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7056855026475714966, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: deathScreen
       value: 
@@ -2126,14 +2102,6 @@ PrefabInstance:
       propertyPath: playerLife3
       value: 
       objectReference: {fileID: 171191517}
-    - target: {fileID: 8421477019653267614, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: moveForce
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8421477019653267614, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: moveTorque
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
