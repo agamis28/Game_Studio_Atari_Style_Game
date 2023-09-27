@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1775729734411906785}
   - component: {fileID: 9120149845783973634}
   - component: {fileID: 436636359423653033}
-  - component: {fileID: 2827150350088564953}
   - component: {fileID: 6991448346935385431}
   - component: {fileID: 5517981584048980511}
+  - component: {fileID: 8941292401805597737}
   m_Layer: 0
   m_Name: Poo
   m_TagString: Untagged
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0.33962262, b: 0.017116176, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ebdb040485524874b8dad1783930a95f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -115,8 +115,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2827150350088564953
-CircleCollider2D:
+--- !u!114 &6991448346935385431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846785326346275223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02407c65d99cd3344aefce7cec63dc2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerShooting: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  bulletSplat: {fileID: 21300000, guid: 658354bb85e28314080d36f961fe001e, type: 3}
+--- !u!114 &5517981584048980511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846785326346275223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866d01a9dcab7eb48b60a822a655d026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
+  playerDirection: {x: 0, y: 0}
+  impulseForce: 1
+--- !u!70 &8941292401805597737
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,7 +160,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 40
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -147,34 +177,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0007837372, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.10809858
---- !u!114 &6991448346935385431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6846785326346275223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02407c65d99cd3344aefce7cec63dc2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerShooting: {fileID: 0}
---- !u!114 &5517981584048980511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6846785326346275223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 866d01a9dcab7eb48b60a822a655d026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigid: {fileID: 0}
-  playerDirection: {x: 0, y: 0}
-  impulseForce: 1
+  m_Offset: {x: -0.00000721642, y: -0.010921498}
+  m_Size: {x: 0.2559341, y: 0.2852664}
+  m_Direction: 0

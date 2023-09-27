@@ -1279,7 +1279,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 425.46}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 150, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314484566
 MonoBehaviour:
@@ -1302,12 +1302,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: bde83eac77f7a704f9f4a881bcf4cdab, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -2054,6 +2054,14 @@ PrefabInstance:
       propertyPath: displayedPointCount
       value: 
       objectReference: {fileID: 1314484566}
+    - target: {fileID: 5080476568712652834, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080476568712652834, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.164
+      objectReference: {fileID: 0}
     - target: {fileID: 6030865104647577980, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: m_Name
       value: Player (Goose)
@@ -2096,6 +2104,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6504637615311623048, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594949592916965759, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7056855026475714966, guid: 95d17269b822942468656cb400ca3197, type: 3}
