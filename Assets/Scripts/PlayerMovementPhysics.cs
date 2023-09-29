@@ -9,7 +9,6 @@ public class PlayerMovementPhysics : MonoBehaviour
 
 	[Header("** Inputs **")]
 	public Vector2 inputs;
-	public Vector2 lastDirection;
 
 	[Header("** Stats **")]
 	public float moveForce = 5f;

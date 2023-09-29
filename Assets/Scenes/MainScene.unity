@@ -2086,6 +2086,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6594949592916965759, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7056855026475714966, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: deathScreen
       value: 
@@ -2102,6 +2106,10 @@ PrefabInstance:
       propertyPath: playerLife3
       value: 
       objectReference: {fileID: 171191517}
+    - target: {fileID: 7056855026475714966, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: ducksLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2117,7 +2125,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2833840045663645377, guid: 555b950dfde779548bcc853e76919299, type: 3}
       propertyPath: spawnTimer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2833840045663645377, guid: 555b950dfde779548bcc853e76919299, type: 3}
       propertyPath: totalToSpawn
@@ -2283,7 +2291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611618483792888890, guid: 68435f4221117de4d9ff5cc4c8e27e7c, type: 3}
       propertyPath: spawnTimer
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7611618483792888890, guid: 68435f4221117de4d9ff5cc4c8e27e7c, type: 3}
       propertyPath: totalToSpawn
