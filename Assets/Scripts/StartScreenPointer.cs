@@ -13,7 +13,6 @@ public class StartScreenPointer : MonoBehaviour
 	public Text button1;
 	public Text button2;
 	public Text button3;
-	private float buttonGap = 125f;
 	private int buttonDefault = 50;
 	private int buttonIncreased = 60;
 	private Color colorSelected = Color.grey;
@@ -23,12 +22,12 @@ public class StartScreenPointer : MonoBehaviour
 	private bool justPressed;
 
 	[Header("** Scene Manager **")]
-	public SceneManagers sceneManager;
+	public SceneManagers sceneManagers;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		sceneManager = GameObject.FindAnyObjectByType<SceneManagers>();
+		sceneManagers = GameObject.FindAnyObjectByType<SceneManagers>();
 	}
 
 	// Update is called once per frame
@@ -105,21 +104,21 @@ public class StartScreenPointer : MonoBehaviour
         if (pointerY == 0)
         {
 			// Enter Main Game Scene
-			sceneManager.PlayGame(); 
+			sceneManagers.PlayGame(); 
         }
 
         // If second button
         if (pointerY == -125)
         {
 			// Enter Tutorial Scene
-			sceneManager.LoadTutorial();
+			sceneManagers.LoadTutorial();
         }
 
         // If third button
         if (pointerY == -250)
         {
 			// Quit Game
-			sceneManager.QuitGame();
+			sceneManagers.QuitGame();
         }
     }
 }
