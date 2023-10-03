@@ -9,28 +9,32 @@ public class PlayerHealth : MonoBehaviour
 {
 	[Header("** Positions **")]
 	public Transform playerTransform;
-	public Vector2 respawnPoint;
-	public Vector2 deathPoint = new Vector2(-15, -15);
+	public Vector3 respawnPoint;
+	public Vector3 deathPoint = new Vector3(-15, -15, 0);
 
 	[Header ("** References **")]
-	public GameObject extraLifePrefab;
+	//public GameObject extraLifePrefab;
 	private PlayerMovementPhysics playerMovement;
-	private CapsuleCollider2D playerCollider;
 	private SpriteRenderer playerRenderer;
-	public LayerMask nothingLayer;
-	public LayerMask ducksLayer;
 
     [Header ("** Stats **")]
 	public int livesCount = 3;
 	public float respawnDelay = 5f;
 	public int extraLives = 0;
 	public int maxLives = 5;
-	public float blinkSpeed = 1f;
-	public bool playerIsInvinsible = false;
-	public float invinsibilityTimer;
-	public float invinsibleTime = 5f;
 
-	[Header("** Player Lives **")]
+	[Header("** Collision **")]
+    private CapsuleCollider2D playerCollider;
+    public LayerMask nothingLayer;
+    public LayerMask ducksLayer;
+
+    [Header("** Player Invinsibility **")]
+    public float blinkSpeed = 1f;
+    public bool playerIsInvinsible = false;
+    public float invinsibilityTimer;
+    public float invinsibleTime = 5f;
+
+    [Header("** Player Lives **")]
 	public GameObject playerLife1;
     public GameObject playerLife2;
     public GameObject playerLife3;
