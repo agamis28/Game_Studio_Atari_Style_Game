@@ -16,6 +16,7 @@ public class DuckNPC : MonoBehaviour
     [Header("** Wandering **")]
     private float speed = 80f;
     private float wanderRadius = 3f;
+    private float detectRadius = 0.05f; // Radius that it can detect the target point
     private bool isWandering = true;
     private bool targetReached = true;
     private Vector2 originPoint;
@@ -25,7 +26,6 @@ public class DuckNPC : MonoBehaviour
     [Header("** Chasing **")]
     private float chaseSpeed = 100f;
     private float chaseRadius = 4f;
-    private float detectRadius = 0.05f;
     private Vector2 playerPosition;
     private Vector2 vectorBetween;
     private Vector2 normalizedVectorBetween;
@@ -39,7 +39,9 @@ public class DuckNPC : MonoBehaviour
     {
         // Find a origin point within the screen range
         originPoint = new Vector2(Random.Range(-screenWidth/2, screenWidth / 2), Random.Range(-screenHeight/2, screenHeight/2));
+        // Get reference to rigidbody
         rigid = GetComponent<Rigidbody2D>();
+        // Find player object
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -63,6 +65,7 @@ public class DuckNPC : MonoBehaviour
         VisualiseDebugLines();
     }
 
+    // Chase the player when it is in its 'chaseRadius'
     public void Chasing()
     {
         // if the distance betweem the player and NPC is less than chaseRadius start chasing
@@ -96,6 +99,7 @@ public class DuckNPC : MonoBehaviour
         }
     }
 
+    // Make NPC wander around the 'wanderRadius'
     public void Wandering()
     {
         // Checking if target is reached and caching it in bool
@@ -122,8 +126,10 @@ public class DuckNPC : MonoBehaviour
         rigid.AddForce(wanderVector.normalized * Time.deltaTime * speed);
     }
 
+    // Shows any movement lines with debugs
     public void VisualiseDebugLines()
     {
+        // If option 'showDebugLines' is on draw all lines
         if (showDebugLines)
         {
             // ** Chasing **
