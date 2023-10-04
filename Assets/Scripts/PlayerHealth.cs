@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
 	[Header ("** References **")]
 	//public GameObject extraLifePrefab;
 	private PlayerMovementPhysics playerMovement;
-	private SpriteRenderer playerRenderer;
+	[SerializeField] private SpriteRenderer playerRenderer;
 
 	[Header ("** Stats **")]
 	public int livesCount = 3;
@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
 	void Start()
 	{
 		playerTransform = transform;
-		playerRenderer = GetComponent<SpriteRenderer>();
+		//playerRenderer = GetComponent<SpriteRenderer>();
 		playerMovement = GetComponent<PlayerMovementPhysics>();
 		playerCollider = GetComponent<CapsuleCollider2D>();
         sceneManagers = GameObject.FindAnyObjectByType<SceneManagers>();

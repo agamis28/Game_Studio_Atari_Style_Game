@@ -5,92 +5,120 @@ using UnityEngine;
 
 public class PlayerArt : MonoBehaviour
 {
-    [Header("** References **")]
-    public SpriteRenderer rend;
+	[Header("** References **")]
+	private SpriteRenderer spriteRenderer;
 
-    [Header("** Stats **")]
-    public Vector2 inputs;
-    public bool flipSprite = false;
+	[Header("** Input **")]
+	private Vector2 inputs;
+	private bool isShooting;
 
-    [Header("** Sprites **")]
-    public Sprite up;
-    public Sprite upDiagonal;
-    public Sprite horizontal;
-    public Sprite right;
-    public Sprite down;
-    public Sprite downDiagonal;
+	[Header("** Sprites **")]
+	[SerializeField] private Sprite idle;
+	[SerializeField] private Sprite[] swimming;
+	[SerializeField] private Sprite[] shooting;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rend = GetComponent<SpriteRenderer>();
-    }
+	[Header("** Swimming Animation Settings **")]
+	private int swimCurrentFrame = 0;
+	private float swimFrameTime = .5f;
+	private float swimAnimationTimer = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        inputs = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+	[Header("** Shooting Animation Settings **")]
+	private int shootCurrentFrame = 0;
+	private float shootFrameTime = .1f;
+	private float shootAnimationTimer = 0;
 
-        CheckChangeSprite();
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		spriteRenderer = GetComponent<SpriteRenderer>();
+	}
 
-    public void CheckChangeSprite()
-    {
-        if (inputs.x == 0 && inputs.y == 1)
-        {
-            // Up
-            rend.sprite = up;
-            rend.flipX = false;
-        }
+	// Update is called once per frame
+	void Update()
+	{
+		// Setting timers
+		swimAnimationTimer += Time.deltaTime;
+		shootAnimationTimer += Time.deltaTime;
 
-        if (inputs.x == 1 && inputs.y == 1)
-        {
-            // Up right
-            rend.sprite = upDiagonal;
-            rend.flipX = false;
-        }
+		// Grabbing inputs
+		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+		isShooting = Input.GetButton("Jump");
 
-        if (inputs.x == -1 && inputs.y == 1)
-        {
-            // Up left
-            rend.sprite = upDiagonal;
-            rend.flipX = true;
-        }
+		/*
 
-        if (inputs.x == 0 && inputs.y == -1)
-        {
-            // Down
-            rend.sprite = down;
-            rend.flipX = false;
-        }
+		// When moving forwards change sprite
+		if (inputs.y > 0.1f || inputs.y < -0.1f)
+		{
+			spriteRenderer.sprite = swimming[swimCurrentFrame];
+		}
 
-        if (inputs.x == 1 && inputs.y == -1)
-        {
-            // Down right
-            rend.sprite = downDiagonal;
-            rend.flipX = false;
-        }
+		// Update the current frame after frameTime
+		if (swimAnimationTimer > swimFrameTime)
+		{
+			// Increment current frame
+			swimCurrentFrame++;
 
-        if (inputs.x == -1 && inputs.y == -1)
-        {
-            // Down left
-            rend.sprite = downDiagonal;
-            rend.flipX = true;
-        }
+			// Reset timer
+			swimAnimationTimer = 0;
+		}
 
-        if (inputs.x == 1 && inputs.y == 0)
-        {
-            // Right
-            rend.sprite = right;
-            rend.flipX = false;
-        }
+		// Loop back to 0 if reached idle length
+		if (swimCurrentFrame >= swimming.Length)
+		{
+			swimCurrentFrame = 0;
+		}
 
-        if (inputs.x == -1 && inputs.y == 0)
-        {
-            // Left
-            rend.sprite = right;
-            rend.flipX = true;
-        }
-    }
+		*/
+
+		// If shooting play shooting animation
+		if (isShooting)
+		{
+			spriteRenderer.sprite = shooting[shootCurrentFrame];
+
+			// Update the current frame after frameTime
+			if (shootAnimationTimer > shootFrameTime)
+			{
+				// Increment current frame
+				shootCurrentFrame++;
+
+				// Reset timer
+				shootAnimationTimer = 0;
+			}
+
+			// Loop back to 0 if reached idle length
+			if (shootCurrentFrame >= shooting.Length)
+			{
+				shootCurrentFrame = 0;
+			}
+		}
+		else if (inputs.y > 0.1f || inputs.y < -0.1f)
+		{
+		
+			spriteRenderer.sprite = swimming[swimCurrentFrame];
+		
+			// Update the current frame after frameTime
+			if (swimAnimationTimer > swimFrameTime)
+			{
+				// Increment current frame
+				swimCurrentFrame++;
+
+				// Reset timer
+				swimAnimationTimer = 0;
+			}
+
+			// Loop back to 0 if reached idle length
+			if (swimCurrentFrame >= swimming.Length)
+			{
+				swimCurrentFrame = 0;
+			}
+		}
+		else
+		{
+			spriteRenderer.sprite = idle;
+		}
+
+	}
+
+
 
 }

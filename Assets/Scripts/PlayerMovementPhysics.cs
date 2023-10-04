@@ -34,18 +34,5 @@ public class PlayerMovementPhysics : MonoBehaviour
         rigid.AddTorque(-inputs.x * moveTorque);
         // Add a force to player
         //rigid.velocity = inputs * moveForce;
-
-        //RotateInDirection();
     }
-
-	private void RotateInDirection()
-	{
-		if(inputs != Vector2.zero)
-		{
-            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, inputs);
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveTorque * Time.deltaTime);
-
-            rigid.MoveRotation(rotation);
-        }
-	}
 }

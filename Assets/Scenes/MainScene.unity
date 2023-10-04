@@ -405,8 +405,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 303.1, y: 84.4}
+  m_AnchoredPosition: {x: 0, y: -359.25}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231713039
 MonoBehaviour:
@@ -442,11 +442,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: bde83eac77f7a704f9f4a881bcf4cdab, type: 3}
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -454,7 +454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shoot all yellow ducks using [ Space Bar ]
+  m_Text: Get rid of the duck infestation by shooting them with your poop!
 --- !u!222 &231713041
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -722,6 +722,11 @@ Transform:
   - {fileID: 1058443833}
   m_Father: {fileID: 581860713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &399206019 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2600073807411219069, guid: 95d17269b822942468656cb400ca3197, type: 3}
+  m_PrefabInstance: {fileID: 1894700427036021846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &475088403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1941,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner Bottom
       objectReference: {fileID: 0}
+    - target: {fileID: 2574141730186701960, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5796402932333932915, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1975,6 +1984,10 @@ PrefabInstance:
     - target: {fileID: 5796402932333932915, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
+      propertyPath: spawnAtStart
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: showSpawnLine
@@ -2301,6 +2314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Duck
       objectReference: {fileID: 0}
+    - target: {fileID: 4274057652828479744, guid: 11b8e30ce783d5c488b975dd1cd135b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2314,6 +2331,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2600073807411219069, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -913399061, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
     - target: {fileID: 4247888087169902712, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: displayedPointCount
       value: 
@@ -2322,6 +2343,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (Goose)
       objectReference: {fileID: 0}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: idle
+      value: 
+      objectReference: {fileID: -913399061, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: idle.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: idle.Array.data[0]
+      value: 
+      objectReference: {fileID: -1640599542, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: idle.Array.data[1]
+      value: 
+      objectReference: {fileID: 1182648188, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: idle.Array.data[2]
+      value: 
+      objectReference: {fileID: 947083186, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: shooting.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: swimming.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: shooting.Array.data[0]
+      value: 
+      objectReference: {fileID: 365520687, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: shooting.Array.data[1]
+      value: 
+      objectReference: {fileID: -291660016, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: shooting.Array.data[2]
+      value: 
+      objectReference: {fileID: 1016105235, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: shooting.Array.data[3]
+      value: 
+      objectReference: {fileID: -483372402, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: swimming.Array.data[0]
+      value: 
+      objectReference: {fileID: -1640599542, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: swimming.Array.data[1]
+      value: 
+      objectReference: {fileID: 1182648188, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+    - target: {fileID: 6133809656636359761, guid: 95d17269b822942468656cb400ca3197, type: 3}
+      propertyPath: swimming.Array.data[2]
+      value: 
+      objectReference: {fileID: 947083186, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
     - target: {fileID: 6504637615311623048, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2362,14 +2443,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6594949592916965759, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7056855026475714966, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: deathScreen
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7056855026475714966, guid: 95d17269b822942468656cb400ca3197, type: 3}
       propertyPath: playerLife1
       value: 
@@ -2383,9 +2456,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 171191517}
     - target: {fileID: 7056855026475714966, guid: 95d17269b822942468656cb400ca3197, type: 3}
-      propertyPath: ducksLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
+      propertyPath: playerRenderer
+      value: 
+      objectReference: {fileID: 399206019}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2529,6 +2602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner Top
       objectReference: {fileID: 0}
+    - target: {fileID: 2574141730186701960, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5796402932333932915, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2571,7 +2648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: spawnAtStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: showSpawnLine
