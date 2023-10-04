@@ -118,9 +118,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.013013322, y: -0.020073693}
-  m_Size: {x: 0.3532852, y: 0.21511742}
-  m_Direction: 1
+  m_Offset: {x: -0.001210471, y: -0.045531534}
+  m_Size: {x: 0.26057968, y: 0.4515158}
+  m_Direction: 0
 --- !u!50 &3837527391070287704
 Rigidbody2D:
   serializedVersion: 4
@@ -178,6 +178,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   respawnPoint: {x: 0, y: 0, z: 0}
   deathPoint: {x: -15, y: -15, z: 0}
+  playerRenderer: {fileID: 2600073807411219069}
   livesCount: 3
   respawnDelay: 2
   extraLives: 0
@@ -271,7 +272,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -774749278, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
+  m_Sprite: {fileID: -913399061, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -289,17 +290,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8139143629364640343}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8501b15822e3044b95b1e52e58ba875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
-  inputs: {x: 0, y: 0}
-  flipSprite: 0
-  up: {fileID: 226352276, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
-  upDiagonal: {fileID: 2101454872, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
-  horizontal: {fileID: -774749278, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
-  right: {fileID: -774749278, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
-  down: {fileID: -1014301088, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
-  downDiagonal: {fileID: -1941786220, guid: 0f08b8cb4fb9b9a4db1f875cce718863, type: 3}
+  idle: {fileID: -913399061, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+  swimming:
+  - {fileID: -1640599542, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+  - {fileID: 1182648188, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+  - {fileID: 947083186, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+  shooting:
+  - {fileID: 365520687, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+  - {fileID: -291660016, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+  - {fileID: 1016105235, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
+  - {fileID: -483372402, guid: 77ebc4743650da14f8e1a46d8a88283d, type: 3}
