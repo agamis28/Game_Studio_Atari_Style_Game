@@ -591,9 +591,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yInput: 0
   pointer: {fileID: 0}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
+  button1: {fileID: 1002176098}
+  button2: {fileID: 1429838624}
+  button3: {fileID: 2022250262}
   sceneManagers: {fileID: 0}
 --- !u!1 &1429838622
 GameObject:
