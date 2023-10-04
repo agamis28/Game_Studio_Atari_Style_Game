@@ -37,7 +37,7 @@ public class DuckNPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Find a origin point within the screen range
+        // Find a random origin point within the screen range
         originPoint = new Vector2(Random.Range(-screenWidth/2, screenWidth / 2), Random.Range(-screenHeight/2, screenHeight/2));
         // Get reference to rigidbody
         rigid = GetComponent<Rigidbody2D>();
@@ -133,6 +133,7 @@ public class DuckNPC : MonoBehaviour
         if (showDebugLines)
         {
             // ** Chasing **
+
             Debug.DrawRay(transform.position, normalizedVectorBetween, Color.red);
 
             // ** Wandering **

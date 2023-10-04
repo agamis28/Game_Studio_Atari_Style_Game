@@ -5,7 +5,7 @@ public class GameController : MonoBehaviour
     [Header("** Pause **")]
     public bool gameIsPaused;
     public int pausedSpeed = 0;
-    public GameObject pausedScreen;
+    [SerializeField] private GameObject pausedScreen;
 
     void Update()
     {

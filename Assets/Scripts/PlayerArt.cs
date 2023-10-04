@@ -19,7 +19,7 @@ public class PlayerArt : MonoBehaviour
 
 	[Header("** Swimming Animation Settings **")]
 	private int swimCurrentFrame = 0;
-	private float swimFrameTime = .5f;
+	private float swimFrameTime = .3f;
 	private float swimAnimationTimer = 0;
 
 	[Header("** Shooting Animation Settings **")]
@@ -44,32 +44,13 @@ public class PlayerArt : MonoBehaviour
 		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 		isShooting = Input.GetButton("Jump");
 
-		/*
+		CheckAniamtionCase();
 
-		// When moving forwards change sprite
-		if (inputs.y > 0.1f || inputs.y < -0.1f)
-		{
-			spriteRenderer.sprite = swimming[swimCurrentFrame];
-		}
+	}
 
-		// Update the current frame after frameTime
-		if (swimAnimationTimer > swimFrameTime)
-		{
-			// Increment current frame
-			swimCurrentFrame++;
-
-			// Reset timer
-			swimAnimationTimer = 0;
-		}
-
-		// Loop back to 0 if reached idle length
-		if (swimCurrentFrame >= swimming.Length)
-		{
-			swimCurrentFrame = 0;
-		}
-
-		*/
-
+	// Check which animation state is active/takes proitity and changes sprite after a timer
+	public void CheckAniamtionCase()
+	{
 		// If shooting play shooting animation
 		if (isShooting)
 		{
@@ -93,9 +74,9 @@ public class PlayerArt : MonoBehaviour
 		}
 		else if (inputs.y > 0.1f || inputs.y < -0.1f)
 		{
-		
+
 			spriteRenderer.sprite = swimming[swimCurrentFrame];
-		
+
 			// Update the current frame after frameTime
 			if (swimAnimationTimer > swimFrameTime)
 			{
@@ -116,9 +97,6 @@ public class PlayerArt : MonoBehaviour
 		{
 			spriteRenderer.sprite = idle;
 		}
-
 	}
-
-
 
 }
