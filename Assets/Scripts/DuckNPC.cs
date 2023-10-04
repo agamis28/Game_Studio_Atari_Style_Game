@@ -3,36 +3,42 @@ using UnityEngine;
 public class DuckNPC : MonoBehaviour
 {
     [Header("** References **")]
-    public GameObject player;
-    public Rigidbody2D rigid;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Rigidbody2D rigid;
 
-    [Header("** Positions **")]
-    private Vector2 playerPosition;
+    [Header("** Screen Dimentions **")]
+    private float screenWidth = 12;
+    private float screenHeight = 9;
+
+    [Header("** Position **")]
     private Vector2 thisPosition;
+
+    [Header("** Wandering **")]
+    private float speed = 80f;
+    private float wanderRadius = 3f;
+    private bool isWandering = true;
+    private bool targetReached = true;
     private Vector2 originPoint;
     private Vector2 targetPoint;
+    private Vector2 wanderVector;
 
-    [Header("** Vectors **")]
+    [Header("** Chasing **")]
+    private float chaseSpeed = 100f;
+    private float chaseRadius = 4f;
+    private float detectRadius = 0.05f;
+    private Vector2 playerPosition;
     private Vector2 vectorBetween;
     private Vector2 normalizedVectorBetween;
 
-    [Header("** Stats **")]
-    public float speed = 75f;
-    public float chaseSpeed = 90f;
-    public float wanderRadius = 3f;
-    private float detectRadius = 0.05f;
-    public float chaseRadius = 4f;
-
-    [Header("** Wandering **")]
-    public bool isWandering = true;
-    private Vector2 wanderVector;
-    public bool targetReached = true;
+    [Header("** Debug Lines **")]
+    [SerializeField]
+    private bool showDebugLines = false;
 
     // Start is called before the first frame update
     void Start()
     {
         // Find a origin point within the screen range
-        originPoint = new Vector2(Random.Range(-6f, 6f), Random.Range(-4.5f,4.5f));
+        originPoint = new Vector2(Random.Range(-screenWidth/2, screenWidth / 2), Random.Range(-screenHeight/2, screenHeight/2));
         rigid = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -53,7 +59,8 @@ public class DuckNPC : MonoBehaviour
         // Chase Player
         Chasing();
 
-        
+        // Show debug lines if its true
+        VisualiseDebugLines();
     }
 
     public void Chasing()
@@ -77,7 +84,7 @@ public class DuckNPC : MonoBehaviour
             normalizedVectorBetween = vectorBetween.normalized;
 
             // Add a force in the direction between DuckNPC and Player
-            rigid.AddForce(normalizedVectorBetween * Time.deltaTime * speed);
+            rigid.AddForce(normalizedVectorBetween * Time.deltaTime * chaseSpeed);
 
             // -- NON PHYSICS -- Change position of NPC to players position
             //transform.Translate(normilizedVectorBetween * Time.deltaTime * speed);
@@ -87,8 +94,6 @@ public class DuckNPC : MonoBehaviour
             // Turn wandering back on when out of range
             isWandering = true;
         }
-
-        Debug.DrawRay(transform.position, normalizedVectorBetween);
     }
 
     public void Wandering()
@@ -110,13 +115,26 @@ public class DuckNPC : MonoBehaviour
             targetReached = false;
         }
 
-        // Drawing the distance between the orgin point
-        Debug.DrawLine(originPoint, targetPoint, Color.red);
-
         // Get the vector between the NPC and its random target point
         wanderVector = targetPoint - (Vector2)transform.position;
 
         // Normalizing the wanderVector, making the movement per second, and setting speed
         rigid.AddForce(wanderVector.normalized * Time.deltaTime * speed);
+    }
+
+    public void VisualiseDebugLines()
+    {
+        if (showDebugLines)
+        {
+            // ** Chasing **
+            Debug.DrawRay(transform.position, normalizedVectorBetween, Color.red);
+
+            // ** Wandering **
+
+            // Drawing the distance between the orgin point
+            Debug.DrawLine(originPoint, targetPoint, Color.blue);
+            // Drawing the path while wandering
+            Debug.DrawLine(thisPosition, targetPoint, Color.green);
+        }
     }
 }
