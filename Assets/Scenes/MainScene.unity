@@ -2222,13 +2222,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3894805725810938969, guid: 11b8e30ce783d5c488b975dd1cd135b7, type: 3}
+      propertyPath: src
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4274057652828479744, guid: 11b8e30ce783d5c488b975dd1cd135b7, type: 3}
       propertyPath: m_Name
       value: Duck
-      objectReference: {fileID: 0}
-    - target: {fileID: 4274057652828479744, guid: 11b8e30ce783d5c488b975dd1cd135b7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

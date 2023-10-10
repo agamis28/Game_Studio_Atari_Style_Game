@@ -17,6 +17,10 @@ public class PlayerShooting : MonoBehaviour
 	public int pointCount = 0;
 	public Text displayedPointCount;
 
+	[Header("** Audio **")]
+	[SerializeField] private AudioSource src;
+	[SerializeField] private AudioClip shootQuackSound;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -46,6 +50,9 @@ public class PlayerShooting : MonoBehaviour
             {
                 // Spawn new bullet
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+				// Play shoot quack sound
+				src.clip = shootQuackSound;
+				src.Play();
                 // Set rotation of the bullet to the players rotation at moment of shot
                 bullet.transform.rotation = player.transform.rotation;
                 bullet.GetComponent<PooCollison>().playerShooting = this;

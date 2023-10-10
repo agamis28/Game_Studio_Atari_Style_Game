@@ -185,4 +185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   rigid: {fileID: 0}
+  src: {fileID: 2398017396265498405, guid: 05a55e7fa8a174844833baf1fcdf0f47, type: 3}
+  NPCDieSound: {fileID: 8300000, guid: e80d15c9b8d74e14e95c93b32d936d79, type: 3}
   showDebugLines: 0
