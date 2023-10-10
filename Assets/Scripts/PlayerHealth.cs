@@ -9,9 +9,9 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 	[Header("** Positions **")]
-	public Transform playerTransform;
-	public Vector3 respawnPoint;
-	public Vector3 deathPoint = new Vector3(-15, -15, 0);
+	private Transform playerTransform;
+	private Vector3 respawnPoint;
+	private Vector3 deathPoint = new Vector3(-15, -15, 0);
 
 	[Header ("** References **")]
 	//public GameObject extraLifePrefab;
@@ -19,30 +19,34 @@ public class PlayerHealth : MonoBehaviour
 	[SerializeField] private SpriteRenderer playerRenderer;
 
 	[Header ("** Stats **")]
-	public int livesCount = 3;
-	public float respawnDelay = 5f;
+	private int livesCount = 3;
+	private float respawnDelay = 2f;
 	public int extraLives = 0;
 	public int maxLives = 5;
 
 	[Header("** Collision **")]
-	private CapsuleCollider2D playerCollider;
-	public LayerMask nothingLayer;
-	public LayerMask ducksLayer;
+    [SerializeField] private LayerMask nothingLayer;
+    [SerializeField] private LayerMask ducksLayer;
+    private CapsuleCollider2D playerCollider;
 
-	[Header("** Player Invinsibility **")]
-	public float blinkSpeed = 1f;
-	public bool playerIsInvinsible = false;
-	public float invinsibilityTimer;
-	public float invinsibleTime = 5f;
+    [Header("** Player Invinsibility **")]
+	private float blinkSpeed = 1f;
+	private bool playerIsInvinsible = false;
+	private float invinsibilityTimer;
+	private float invinsibleTime = 5f;
 
 	[Header("** Player Lives **")]
-	public GameObject playerLife1;
-	public GameObject playerLife2;
-	public GameObject playerLife3;
-	public GameObject deathScreen;
+	[SerializeField] private GameObject playerLife1;
+    [SerializeField] private GameObject playerLife2;
+    [SerializeField] private GameObject playerLife3;
+    [SerializeField] private GameObject deathScreen;
 
-	[Header("** Scene Manager **")]
-	public SceneManagers sceneManagers;
+    [Header("** Audio **")]
+    [SerializeField] private AudioSource src;
+    [SerializeField] private AudioClip gooseDyingSound;
+
+    [Header("** Scene Manager **")]
+    [SerializeField] private SceneManagers sceneManagers;
 
 	// Start is called before the first frame update
 	void Start()
@@ -138,6 +142,10 @@ public class PlayerHealth : MonoBehaviour
 			// Move player out of screen, to death position
 			playerTransform.position = deathPoint;
 			Debug.Log("Hit a duck");
+
+			// Play death sound
+			src.clip = gooseDyingSound;
+			src.Play();
 
 			// Disable collider to not collide again
 			playerCollider.excludeLayers = ducksLayer;
