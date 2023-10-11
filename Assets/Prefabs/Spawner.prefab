@@ -46,12 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcDuck: {fileID: 4274057652828479744, guid: 11b8e30ce783d5c488b975dd1cd135b7, type: 3}
   spawnWidth: 16
-  spawnSpeed: 8
+  spawnSpeed: 7
   speedMaxTime: 15
-  spawnSpeedDecrement: 0.1
+  spawnSpeedDecrement: 0.15
   speedTimer: 0
   spawnTimer: 0
   spawnAmount: 1
-  amountMaxTime: 90
+  amountMaxTime: 45
   amountTimer: 0
-  spawnAtStart: 0
+  spawnAtStart: 1
+  showSpawnLine: 1
+  spawnVertically: 0

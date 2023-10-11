@@ -9,23 +9,23 @@ public class DuckNPCSpawner : MonoBehaviour
 	public GameObject npcDuck;
 
 	[Header("** Spawn Area Width **")]
-	public float spawnWidth;
+    [SerializeField] private float spawnWidth;
 
 	[Header("** Spawn Speed **")]
-	public float spawnSpeed = 8;
-	public float speedMaxTime = 15;
-	public float spawnSpeedDecrement = .1f;
-	public float speedTimer;
+	[SerializeField] private float spawnSpeed = 8;
+    [SerializeField] private float speedMaxTime = 15;
+	[SerializeField] private float spawnSpeedDecrement = .1f;
+	[SerializeField] private float speedTimer;
 
 	[Header("** Spawning **")]
 	private Vector3 randomNPCPosition;
-    public float spawnTimer;
+    [SerializeField] private float spawnTimer;
 
 	[Header("** Spawn Amount **")]
-	public float spawnAmount = 1;
-	public float amountMaxTime = 90;
-	//public float spawnAmountIncrement = 1;
-	public float amountTimer;
+    [SerializeField] private float spawnAmount = 1;
+    [SerializeField] private float amountMaxTime = 90;
+    //public float spawnAmountIncrement = 1;
+    [SerializeField] private float amountTimer;
 
 	[Header("** Options **")]
 	[SerializeField] private bool spawnAtStart = false;

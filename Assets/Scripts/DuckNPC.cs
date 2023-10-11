@@ -15,7 +15,7 @@ public class DuckNPC : MonoBehaviour
 
     [Header("** Wandering **")]
     private float speed = 80f;
-    private float wanderRadius = 3f;
+    private float wanderRadius = 2.5f;
     private float detectRadius = 0.05f; // Radius that it can detect the target point
     private bool isWandering = true;
     private bool targetReached = true;
