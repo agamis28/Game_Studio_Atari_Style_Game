@@ -6,6 +6,7 @@ public class PlayerShooting : MonoBehaviour
 	[Header("** References **")]
 	public GameObject bulletPrefab;
 	public GameObject player;
+	[SerializeField] private Animator animator;
 
 	[Header("** Stats **")]
 	public float timeBetweenShots = 0.4f;
@@ -48,6 +49,8 @@ public class PlayerShooting : MonoBehaviour
             // Only shoot if its been more than time between shots
             if (currentShotsTimer >= timeBetweenShots)
             {
+				// Triggering animator parameter
+				animator.SetTrigger("Shooting");
                 // Spawn new bullet
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
 				// Play shoot quack sound

@@ -7,6 +7,7 @@ public class PlayerArt : MonoBehaviour
 {
 	[Header("** References **")]
 	private SpriteRenderer spriteRenderer;
+	[SerializeField] Animator animator;
 
 	[Header("** Input **")]
 	private Vector2 inputs;
@@ -44,9 +45,13 @@ public class PlayerArt : MonoBehaviour
 		inputs = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 		isShooting = Input.GetButton("Jump");
 
-		CheckAniamtionCase();
+		// Setting parameter floats
+        animator.SetFloat("X", inputs.x);
+        animator.SetFloat("Y", inputs.y);
 
-	}
+        //CheckAniamtionCase(); ** Old way, manually animating sprites if conditions **
+
+    }
 
 	// Check which animation state is active/takes proitity and changes sprite after a timer
 	public void CheckAniamtionCase()
