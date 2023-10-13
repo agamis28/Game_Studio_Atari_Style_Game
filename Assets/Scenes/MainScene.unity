@@ -1506,7 +1506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerLeft: {fileID: 66451587}
   spawnerRight: {fileID: 1265871493}
-  currentSpawnerTimer: 0
 --- !u!4 &1396996541
 Transform:
   m_ObjectHideFlags: 0
@@ -2049,6 +2048,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
+      propertyPath: spawnSpeed
+      value: 7.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
+      propertyPath: amountMaxTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: showSpawnLine
       value: 0
       objectReference: {fileID: 0}
@@ -2545,6 +2552,10 @@ PrefabInstance:
     - target: {fileID: 5796402932333932915, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
+      propertyPath: spawnSpeed
+      value: 7.2
       objectReference: {fileID: 0}
     - target: {fileID: 8546408780821114422, guid: b643b98ae855fcf4497457c0409486a6, type: 3}
       propertyPath: showSpawnLine
