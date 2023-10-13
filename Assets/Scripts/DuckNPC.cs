@@ -68,8 +68,8 @@ public class DuckNPC : MonoBehaviour
     // Chase the player when it is in its 'chaseRadius'
     public void Chasing()
     {
-        // if the distance betweem the player and NPC is less than chaseRadius start chasing
-        if (Mathf.Abs(playerPosition.x - thisPosition.x) < chaseRadius && Mathf.Abs(playerPosition.y - thisPosition.y) < chaseRadius)
+        // if the distance betweem the player and NPC is less than chaseRadius start chasing and only when player is not invinsible
+        if (Mathf.Abs(playerPosition.x - thisPosition.x) < chaseRadius && Mathf.Abs(playerPosition.y - thisPosition.y) < chaseRadius && player.GetComponent<PlayerHealth>().playerIsInvinsible == false)
         {
             // Turn off wandering
             isWandering = false;

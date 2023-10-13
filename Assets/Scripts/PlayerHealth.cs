@@ -19,10 +19,10 @@ public class PlayerHealth : MonoBehaviour
 	[SerializeField] private SpriteRenderer playerRenderer;
 
 	[Header ("** Stats **")]
-	private int livesCount = 3;
+	[SerializeField] private int livesCount = 3;
 	private float respawnDelay = 2f;
-	public int extraLives = 0;
-	public int maxLives = 5;
+	//private int extraLives = 0;
+	//private int maxLives = 5;
 
 	[Header("** Collision **")]
     [SerializeField] private LayerMask nothingLayer;
@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("** Player Invinsibility **")]
 	private float blinkSpeed = 1f;
-	private bool playerIsInvinsible = false;
+	public bool playerIsInvinsible = false;
 	private float invinsibilityTimer;
 	private float invinsibleTime = 5f;
 
@@ -97,18 +97,22 @@ public class PlayerHealth : MonoBehaviour
 
 	void PlayerRespawn()
 	{
-		// Respawn in respawn position, if player still has lives
-		// ** PLAYER IS RESPAWNED **
-		if (livesCount > 0)
+		Debug.Log("respawn function");
+        // Lower Lives
+        livesCount -= 1;
+        // Respawn in respawn position, if player still has lives
+        // ** PLAYER IS RESPAWNED **
+        if (livesCount > 0)
 		{
-			// Turn on the invinsibility period
-			playerIsInvinsible = true;
-			// Reset the timer for the invinsiblity
-			invinsibilityTimer = 0;
+			Debug.Log("invinsiblity on and change position back");
+            // Reset the timer for the invinsiblity
+            invinsibilityTimer = 0;
+            // Turn on the invinsibility period
+            playerIsInvinsible = true;
 			// Enable movement
 			playerMovement.enabled = true;
-			// Move player back to respawn point
-			playerTransform.position = respawnPoint;
+            // Move player back to respawn point
+            playerTransform.position = respawnPoint;
 		}
 	}
 
@@ -139,25 +143,23 @@ public class PlayerHealth : MonoBehaviour
 		// ** PLAYER IS DEAD **
 		if (collision.gameObject.tag == "Enemy")
 		{
-			// Move player out of screen, to death position
-			playerTransform.position = deathPoint;
+            // Disable collider to not collide again
+            playerCollider.excludeLayers = ducksLayer;
+
+            // Move player out of screen, to death position
+            playerTransform.position = deathPoint;
 			Debug.Log("Hit a duck");
 
 			// Play death sound
 			src.clip = gooseDyingSound;
 			src.Play();
 
-			// Disable collider to not collide again
-			playerCollider.excludeLayers = ducksLayer;
-
 			// Disable playermovement
 			playerMovement.enabled = false;
 
-			// Lower Lives
-			livesCount -= 1;
-
 			// Delay respawn
 			Invoke("PlayerRespawn", respawnDelay);
+			Debug.Log("End of collison function");
 		}
 
 	}

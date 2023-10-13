@@ -531,6 +531,7 @@ MonoBehaviour:
   gameIsPaused: 0
   pausedSpeed: 0
   pausedScreen: {fileID: 291921969}
+  spawnManager: {fileID: 1396996539}
 --- !u!4 &340818769
 Transform:
   m_ObjectHideFlags: 0
